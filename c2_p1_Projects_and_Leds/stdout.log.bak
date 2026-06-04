@@ -1,0 +1,46 @@
+Running in Lattice mode
+
+
+Starting:    C:\lscc\iCEcube2.2020.12\synpbase\bin64\mbin\synbatch.exe
+Install:     C:\lscc\iCEcube2.2020.12\synpbase
+Hostname:    CARLINHODF91
+Date:        Thu Jun 04 15:15:48 2026
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch c2_p1_Projects_and_Leds_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+log file: "C:\lscc\iCEcube2.2020.12\sbt_backend\Projects\c2_p1_Projects_and_Leds\c2_p1_Projects_and_Leds_Implmnt\c2_p1_Projects_and_Leds.srr"
+Running: c2_p1_Projects_and_Leds_Implmnt in foreground
+
+Running c2_p1_Projects_and_Leds_syn|c2_p1_Projects_and_Leds_Implmnt
+
+Running: compile (Compile) on c2_p1_Projects_and_Leds_syn|c2_p1_Projects_and_Leds_Implmnt
+# Thu Jun 04 15:15:48 2026
+
+Running: compile_flow (Compile Process) on c2_p1_Projects_and_Leds_syn|c2_p1_Projects_and_Leds_Implmnt
+# Thu Jun 04 15:15:48 2026
+
+Running: compiler (Compile Input) on c2_p1_Projects_and_Leds_syn|c2_p1_Projects_and_Leds_Implmnt
+# Thu Jun 04 15:15:48 2026
+compiler exited with errors
+Job failed on: c2_p1_Projects_and_Leds_syn|c2_p1_Projects_and_Leds_Implmnt
+
+Job: "compiler" terminated with error status: 2
+See log file: "C:\lscc\iCEcube2.2020.12\sbt_backend\Projects\c2_p1_Projects_and_Leds\c2_p1_Projects_and_Leds_Implmnt\synlog\c2_p1_Projects_and_Leds_compiler.srr"
+# Thu Jun 04 15:15:49 2026
+
+Return Code: 2
+Run Time:00h:00m:01s
+Complete: Compile Process on c2_p1_Projects_and_Leds_syn|c2_p1_Projects_and_Leds_Implmnt
+Complete: Compile on c2_p1_Projects_and_Leds_syn|c2_p1_Projects_and_Leds_Implmnt
+Complete: Logic Synthesis on c2_p1_Projects_and_Leds_syn|c2_p1_Projects_and_Leds_Implmnt
+
+exit status=2
+
+exit status=2
+

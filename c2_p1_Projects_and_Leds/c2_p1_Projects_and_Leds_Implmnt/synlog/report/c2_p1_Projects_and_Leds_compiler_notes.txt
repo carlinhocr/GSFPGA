@@ -1,0 +1,7 @@
+@N|Running in 64-bit mode
+@N|Running in 64-bit mode
+@N: CG364 :"Z:\Documents\Programming\FPGA\GSFPGA\c2_p1_switchestoleds.v":1:7:1:22|Synthesizing module Switches_to_Leds in library work.
+@N|Running in 64-bit mode
+@N: NF107 :"Z:\Documents\Programming\FPGA\GSFPGA\c2_p1_switchestoleds.v":1:7:1:22|Selected library: work cell: Switches_to_Leds view verilog as top level
+@N: NF107 :"Z:\Documents\Programming\FPGA\GSFPGA\c2_p1_switchestoleds.v":1:7:1:22|Selected library: work cell: Switches_to_Leds view verilog as top level
+

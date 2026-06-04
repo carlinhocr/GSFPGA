@@ -1,0 +1,2 @@
+@E: CG829 :"Z:\Documents\Programming\FPGA\GSFPGA\c2_p1_switchestoleds.v":9:15:9:15|Unexpected ) after comma -- missing port in ANSI port list
+
