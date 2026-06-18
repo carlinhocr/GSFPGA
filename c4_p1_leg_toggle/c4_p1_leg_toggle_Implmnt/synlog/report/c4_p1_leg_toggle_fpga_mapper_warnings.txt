@@ -1,0 +1,2 @@
+@W: FX1039 :"z:\documents\programming\fpga\gsfpga\c4_p1_led_toggle.v":9:4:9:9|User-specified initial value defined for instance r_LED_1 is being ignored. 
+@W: FX1039 :"z:\documents\programming\fpga\gsfpga\c4_p1_led_toggle.v":9:4:9:9|User-specified initial value defined for instance r_Switch_1 is being ignored. 

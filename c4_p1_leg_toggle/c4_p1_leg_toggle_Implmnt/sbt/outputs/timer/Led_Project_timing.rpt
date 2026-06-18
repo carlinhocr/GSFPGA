@@ -1,0 +1,1134 @@
+# ******************************************************************************
+
+# iCEcube Static Timer
+
+# Version:            2020.12.27943
+
+# Build Date:         Dec  9 2020 17:33:20
+
+# File Generated:     Jun 18 2026 13:15:14
+
+# Purpose:            Timing Report with critical paths info
+
+# Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+# ******************************************************************************
+
+Device: iCE40HX1K
+Derating factors (Best:Typical:Worst) :-  ( 0.563724 : 0.623363 : 0.701346 )
+Derating factor used to generate this timing report:  Worst
+Based on the following operating conditions 
+Junction Temperature(degree Celsius): 85
+Core Voltage(V): 1.14
+Process Corner:  Worst
+NOTE:
+Please check both worst-case and best-case scenarios for "Setup Times" 
+and "Hold Times" checks
+ #####################################################################
+                    Table of Contents
+ =====================================================================
+	1::Clock Frequency Summary
+	2::Clock Relationship Summary
+	3::Datasheet Report
+		3.1::Setup Times
+		3.2::Clock to Out
+		3.3::Pad to Pad
+		3.4::Hold Times
+		3.5::Minimum Clock to Out
+		3.6::Minimum Pad To Pad
+	4::Path Details for Clock Frequency Summary
+		4.1::Critical Path Report for i_Clk
+	5::Path Details for Clock Relationship Summary
+		5.1::Critical Path Report for (i_Clk:R vs. i_Clk:R)
+	6::Path Details for DataSheet
+		6.1::Setup Times Path Details
+			6.1.1::Path details for port: i_Switch_1
+		6.2::Clock to Out Path Details
+			6.2.1::Path details for port: o_LED_1
+		6.3::PI to PO Path Details
+		6.4::Hold Times Path Details
+			6.4.1::Path details for port: i_Switch_1
+		6.5::Minimum Clock to Out Path Details
+			6.5.1::Path details for port: o_LED_1
+		6.6::Minimum Pad To Pad Path Details
+ =====================================================================
+                    End of Table of Contents
+ #####################################################################
+
+ #####################################################################
+                    1::Clock Frequency Summary
+ =====================================================================
+Number of clocks: 1
+Clock: i_Clk  | Frequency: 654.05 MHz  | Target: 25.00 MHz  | 
+
+ =====================================================================
+                    End of Clock Frequency Summary
+ #####################################################################
+
+
+ #####################################################################
+                    2::Clock Relationship Summary
+ =====================================================================
+
+Launch Clock  Capture Clock  Constraint(R-R)  Slack(R-R)  Constraint(R-F)  Slack(R-F)  Constraint(F-F)  Slack(F-F)  Constraint(F-R)  Slack(F-R)  
+------------  -------------  ---------------  ----------  ---------------  ----------  ---------------  ----------  ---------------  ----------  
+i_Clk         i_Clk          40000            38471       N/A              N/A         N/A              N/A         N/A              N/A         
+
+ =====================================================================
+                    End of Clock Relationship Summary
+ #####################################################################
+
+
+ #####################################################################
+                    3::Datasheet Report
+
+All values are in Picoseconds
+ =====================================================================
+
+                        3.1::Setup Times
+                        ----------------
+
+Data Port   Clock Port  Setup Times  Clock Reference:Phase  
+----------  ----------  -----------  ---------------------  
+i_Switch_1  i_Clk       507          i_Clk:R                
+
+
+                       3.2::Clock to Out
+                       -----------------
+
+Data Port  Clock Port  Clock to Out  Clock Reference:Phase  
+---------  ----------  ------------  ---------------------  
+o_LED_1    i_Clk       8532          i_Clk:R                
+
+
+                         3.3::Pad to Pad
+                         ---------------
+
+Port Name (Input)  Port Name (Output)  Pad to Pad  
+-----------------  ------------------  ----------  
+
+
+                         3.4::Hold Times
+                         ---------------
+
+Data Port   Clock Port  Hold Times  Clock Reference:Phase  
+----------  ----------  ----------  ---------------------  
+i_Switch_1  i_Clk       189         i_Clk:R                
+
+
+               3.5::Minimum Clock to Out
+               -------------------------
+
+Data Port  Clock Port  Minimum Clock to Out  Clock Reference:Phase  
+---------  ----------  --------------------  ---------------------  
+o_LED_1    i_Clk       8196                  i_Clk:R                
+
+
+                 3.6::Minimum Pad To Pad
+                 -----------------------
+
+Port Name (Input)  Port Name (Output)  Minimum Pad To Pad  
+-----------------  ------------------  ------------------  
+
+===================================================================== 
+                    End of Datasheet Report
+##################################################################### 
+##################################################################### 
+                    4::Path Details for Clock Frequency Summary
+===================================================================== 
+4.1::Critical Path Report for i_Clk
+***********************************
+Clock: i_Clk
+Frequency: 654.05 MHz | Target: 25.00 MHz
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : r_LED_1_LC_9_6_0/lcout
+Path End         : r_LED_1_LC_9_6_0/in1
+Capture Clock    : r_LED_1_LC_9_6_0/clk
+Setup Constraint : 40000p
+Path slack       : 38472p
+
+Capture Clock Arrival Time (i_Clk:R#2)   40000
++ Capture Clock Source Latency               0
++ Capture Clock Path Delay                2461
+- Setup Time                              -400
+--------------------------------------   ----- 
+End-of-path required time (ps)           42062
+
+Launch Clock Arrival Time (i_Clk:R#1)      0
++ Launch Clock Source Latency              0
++ Launch Clock Path Delay               2461
++ Clock To Q                             540
++ Data Path Delay                        589
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3590
+ 
+Launch Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+Data path
+pin name                model name                 delay  cumulative delay  slack  edge  Fanout
+----------------------  -------------------------  -----  ----------------  -----  ----  ------
+r_LED_1_LC_9_6_0/lcout  LogicCell40_SEQ_MODE_1000    540              3001  38471  RISE       2
+I__18/I                 LocalMux                       0              3001  38471  RISE       1
+I__18/O                 LocalMux                     330              3331  38471  RISE       1
+I__20/I                 InMux                          0              3331  38471  RISE       1
+I__20/O                 InMux                        259              3590  38471  RISE       1
+r_LED_1_LC_9_6_0/in1    LogicCell40_SEQ_MODE_1000      0              3590  38471  RISE       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Frequency Summary
+##################################################################### 
+
+
+##################################################################### 
+                    5::Path Details for Clock Relationship Summary
+===================================================================== 
+
+5.1::Critical Path Report for (i_Clk:R vs. i_Clk:R)
+***************************************************
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : r_LED_1_LC_9_6_0/lcout
+Path End         : r_LED_1_LC_9_6_0/in1
+Capture Clock    : r_LED_1_LC_9_6_0/clk
+Setup Constraint : 40000p
+Path slack       : 38472p
+
+Capture Clock Arrival Time (i_Clk:R#2)   40000
++ Capture Clock Source Latency               0
++ Capture Clock Path Delay                2461
+- Setup Time                              -400
+--------------------------------------   ----- 
+End-of-path required time (ps)           42062
+
+Launch Clock Arrival Time (i_Clk:R#1)      0
++ Launch Clock Source Latency              0
++ Launch Clock Path Delay               2461
++ Clock To Q                             540
++ Data Path Delay                        589
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3590
+ 
+Launch Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+Data path
+pin name                model name                 delay  cumulative delay  slack  edge  Fanout
+----------------------  -------------------------  -----  ----------------  -----  ----  ------
+r_LED_1_LC_9_6_0/lcout  LogicCell40_SEQ_MODE_1000    540              3001  38471  RISE       2
+I__18/I                 LocalMux                       0              3001  38471  RISE       1
+I__18/O                 LocalMux                     330              3331  38471  RISE       1
+I__20/I                 InMux                          0              3331  38471  RISE       1
+I__20/O                 InMux                        259              3590  38471  RISE       1
+r_LED_1_LC_9_6_0/in1    LogicCell40_SEQ_MODE_1000      0              3590  38471  RISE       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Relationship Summary
+##################################################################### 
+
+
+##################################################################### 
+                    6::Path Details for DataSheet
+===================================================================== 
+
+
+6.1::Setup Times Path Details           
+--------------------------------------------------
+
+6.1.1::Path details for port: i_Switch_1
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port         : i_Switch_1
+Clock Port        : i_Clk
+Clock Reference   : i_Clk:R
+Setup Time        : 507
+
+
+Data Path Delay                2498
++ Setup Time                    470
+- Capture Clock Path Delay    -2461
+---------------------------- ------
+Setup to Clock                  507
+
+Data Path
+pin name                             model name                 delay  cummulative delay  edge  Fanout  
+-----------------------------------  -------------------------  -----  -----------------  ----  ------  
+i_Switch_1                           Led_Project                0      0                  RISE  1       
+i_Switch_1_ibuf_iopad/PACKAGEPIN:in  IO_PAD                     0      0                  RISE  1       
+i_Switch_1_ibuf_iopad/DOUT           IO_PAD                     590    590                RISE  1       
+i_Switch_1_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001     0      590                RISE  1       
+i_Switch_1_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001     617    1207               RISE  1       
+I__13/I                              Odrv4                      0      1207               RISE  1       
+I__13/O                              Odrv4                      351    1558               RISE  1       
+I__14/I                              Span4Mux_v                 0      1558               RISE  1       
+I__14/O                              Span4Mux_v                 351    1909               RISE  1       
+I__15/I                              LocalMux                   0      1909               RISE  1       
+I__15/O                              LocalMux                   330    2238               RISE  1       
+I__16/I                              InMux                      0      2238               RISE  1       
+I__16/O                              InMux                      259    2498               RISE  1       
+r_LED_1_LC_9_6_0/in0                 LogicCell40_SEQ_MODE_1000  0      2498               RISE  1       
+
+Capture Clock Path
+pin name                                            model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+i_Clk                                               Led_Project                0      0                  RISE  1       
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                     590    590                RISE  1       
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      590                RISE  1       
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1998               RISE  1       
+I__8/I                                              gio2CtrlBuf                0      1998               RISE  1       
+I__8/O                                              gio2CtrlBuf                0      1998               RISE  1       
+I__9/I                                              GlobalMux                  0      1998               RISE  1       
+I__9/O                                              GlobalMux                  154    2153               RISE  1       
+I__10/I                                             ClkMux                     0      2153               RISE  1       
+I__10/O                                             ClkMux                     309    2461               RISE  1       
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000  0      2461               RISE  1       
+
+6.2::Clock to Out Path Details          
+--------------------------------------------------
+
+6.2.1::Path details for port: o_LED_1   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : o_LED_1
+Clock Port         : i_Clk
+Clock Reference    : i_Clk:R
+Clock to Out Delay : 8532
+
+
+Launch Clock Path Delay        2461
++ Clock To Q Delay              540
++ Data Path Delay              5531
+---------------------------- ------
+Clock To Out Delay             8532
+
+Launch Clock Path
+pin name                                            model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+i_Clk                                               Led_Project                0      0                  RISE  1       
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                     590    590                RISE  1       
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      590                RISE  1       
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1998               RISE  1       
+I__8/I                                              gio2CtrlBuf                0      1998               RISE  1       
+I__8/O                                              gio2CtrlBuf                0      1998               RISE  1       
+I__9/I                                              GlobalMux                  0      1998               RISE  1       
+I__9/O                                              GlobalMux                  154    2153               RISE  1       
+I__10/I                                             ClkMux                     0      2153               RISE  1       
+I__10/O                                             ClkMux                     309    2461               RISE  1       
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000  0      2461               RISE  1       
+
+Data Path
+pin name                           model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------  -------------------------  -----  -----------------  ----  ------  
+r_LED_1_LC_9_6_0/lcout             LogicCell40_SEQ_MODE_1000  540    3001               RISE  2       
+I__19/I                            Odrv4                      0      3001               RISE  1       
+I__19/O                            Odrv4                      351    3352               RISE  1       
+I__21/I                            LocalMux                   0      3352               RISE  1       
+I__21/O                            LocalMux                   330    3682               RISE  1       
+I__22/I                            IoInMux                    0      3682               RISE  1       
+I__22/O                            IoInMux                    259    3941               RISE  1       
+o_LED_1_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3941               RISE  1       
+o_LED_1_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2237   6178               FALL  1       
+o_LED_1_obuf_iopad/DIN             IO_PAD                     0      6178               FALL  1       
+o_LED_1_obuf_iopad/PACKAGEPIN:out  IO_PAD                     2353   8532               FALL  1       
+o_LED_1                            Led_Project                0      8532               FALL  1       
+
+6.4::Hold Times Path Details            
+--------------------------------------------------
+
+6.4.1::Path details for port: i_Switch_1
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port         : i_Switch_1
+Clock Port        : i_Clk
+Clock Reference   : i_Clk:R
+Hold Time         : 189
+
+
+Capture Clock Path Delay       2461
++ Hold  Time                      0
+- Data Path Delay             -2272
+---------------------------- ------
+Hold Time                       189
+
+Data Path
+pin name                             model name                 delay  cummulative delay  edge  Fanout  
+-----------------------------------  -------------------------  -----  -----------------  ----  ------  
+i_Switch_1                           Led_Project                0      0                  FALL  1       
+i_Switch_1_ibuf_iopad/PACKAGEPIN:in  IO_PAD                     0      0                  FALL  1       
+i_Switch_1_ibuf_iopad/DOUT           IO_PAD                     540    540                FALL  1       
+i_Switch_1_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001     0      540                FALL  1       
+i_Switch_1_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001     463    1003               FALL  1       
+I__13/I                              Odrv4                      0      1003               FALL  1       
+I__13/O                              Odrv4                      372    1375               FALL  1       
+I__14/I                              Span4Mux_v                 0      1375               FALL  1       
+I__14/O                              Span4Mux_v                 372    1746               FALL  1       
+I__15/I                              LocalMux                   0      1746               FALL  1       
+I__15/O                              LocalMux                   309    2055               FALL  1       
+I__16/I                              InMux                      0      2055               FALL  1       
+I__16/O                              InMux                      217    2272               FALL  1       
+r_LED_1_LC_9_6_0/in0                 LogicCell40_SEQ_MODE_1000  0      2272               FALL  1       
+
+Capture Clock Path
+pin name                                            model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+i_Clk                                               Led_Project                0      0                  RISE  1       
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                     590    590                RISE  1       
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      590                RISE  1       
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1998               RISE  1       
+I__8/I                                              gio2CtrlBuf                0      1998               RISE  1       
+I__8/O                                              gio2CtrlBuf                0      1998               RISE  1       
+I__9/I                                              GlobalMux                  0      1998               RISE  1       
+I__9/O                                              GlobalMux                  154    2153               RISE  1       
+I__10/I                                             ClkMux                     0      2153               RISE  1       
+I__10/O                                             ClkMux                     309    2461               RISE  1       
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000  0      2461               RISE  1       
+
+6.5::Min Clock to Out Path Details      
+--------------------------------------------------
+
+6.5.1::Path details for port: o_LED_1   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : o_LED_1
+Clock Port         : i_Clk
+Clock Reference    : i_Clk:R
+Clock to Out Delay : 8196
+
+
+Launch Clock Path Delay        2461
++ Clock To Q Delay              540
++ Data Path Delay              5195
+---------------------------- ------
+Clock To Out Delay             8196
+
+Launch Clock Path
+pin name                                            model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+i_Clk                                               Led_Project                0      0                  RISE  1       
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                     590    590                RISE  1       
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      590                RISE  1       
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1998               RISE  1       
+I__8/I                                              gio2CtrlBuf                0      1998               RISE  1       
+I__8/O                                              gio2CtrlBuf                0      1998               RISE  1       
+I__9/I                                              GlobalMux                  0      1998               RISE  1       
+I__9/O                                              GlobalMux                  154    2153               RISE  1       
+I__10/I                                             ClkMux                     0      2153               RISE  1       
+I__10/O                                             ClkMux                     309    2461               RISE  1       
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000  0      2461               RISE  1       
+
+Data Path
+pin name                           model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------  -------------------------  -----  -----------------  ----  ------  
+r_LED_1_LC_9_6_0/lcout             LogicCell40_SEQ_MODE_1000  540    3001               FALL  2       
+I__19/I                            Odrv4                      0      3001               FALL  1       
+I__19/O                            Odrv4                      372    3373               FALL  1       
+I__21/I                            LocalMux                   0      3373               FALL  1       
+I__21/O                            LocalMux                   309    3682               FALL  1       
+I__22/I                            IoInMux                    0      3682               FALL  1       
+I__22/O                            IoInMux                    217    3899               FALL  1       
+o_LED_1_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3899               FALL  1       
+o_LED_1_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2006   5905               RISE  1       
+o_LED_1_obuf_iopad/DIN             IO_PAD                     0      5905               RISE  1       
+o_LED_1_obuf_iopad/PACKAGEPIN:out  IO_PAD                     2292   8196               RISE  1       
+o_LED_1                            Led_Project                0      8196               RISE  1       
+
+
+ =====================================================================
+                    End of Path Details for Datasheet
+ #####################################################################
+
+##################################################################### 
+                    Detailed Setup Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : r_LED_1_LC_9_6_0/lcout
+Path End         : r_LED_1_LC_9_6_0/in1
+Capture Clock    : r_LED_1_LC_9_6_0/clk
+Setup Constraint : 40000p
+Path slack       : 38472p
+
+Capture Clock Arrival Time (i_Clk:R#2)   40000
++ Capture Clock Source Latency               0
++ Capture Clock Path Delay                2461
+- Setup Time                              -400
+--------------------------------------   ----- 
+End-of-path required time (ps)           42062
+
+Launch Clock Arrival Time (i_Clk:R#1)      0
++ Launch Clock Source Latency              0
++ Launch Clock Path Delay               2461
++ Clock To Q                             540
++ Data Path Delay                        589
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3590
+ 
+Launch Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+Data path
+pin name                model name                 delay  cumulative delay  slack  edge  Fanout
+----------------------  -------------------------  -----  ----------------  -----  ----  ------
+r_LED_1_LC_9_6_0/lcout  LogicCell40_SEQ_MODE_1000    540              3001  38471  RISE       2
+I__18/I                 LocalMux                       0              3001  38471  RISE       1
+I__18/O                 LocalMux                     330              3331  38471  RISE       1
+I__20/I                 InMux                          0              3331  38471  RISE       1
+I__20/O                 InMux                        259              3590  38471  RISE       1
+r_LED_1_LC_9_6_0/in1    LogicCell40_SEQ_MODE_1000      0              3590  38471  RISE       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : r_Switch_1_LC_9_6_1/lcout
+Path End         : r_LED_1_LC_9_6_0/in3
+Capture Clock    : r_LED_1_LC_9_6_0/clk
+Setup Constraint : 40000p
+Path slack       : 38598p
+
+Capture Clock Arrival Time (i_Clk:R#2)   40000
++ Capture Clock Source Latency               0
++ Capture Clock Path Delay                2461
+- Setup Time                              -274
+--------------------------------------   ----- 
+End-of-path required time (ps)           42188
+
+Launch Clock Arrival Time (i_Clk:R#1)      0
++ Launch Clock Source Latency              0
++ Launch Clock Path Delay               2461
++ Clock To Q                             540
++ Data Path Delay                        589
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3590
+ 
+Launch Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_Switch_1_LC_9_6_1/clk                             LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+Data path
+pin name                   model name                 delay  cumulative delay  slack  edge  Fanout
+-------------------------  -------------------------  -----  ----------------  -----  ----  ------
+r_Switch_1_LC_9_6_1/lcout  LogicCell40_SEQ_MODE_1000    540              3001  38597  RISE       1
+I__11/I                    LocalMux                       0              3001  38597  RISE       1
+I__11/O                    LocalMux                     330              3331  38597  RISE       1
+I__12/I                    InMux                          0              3331  38597  RISE       1
+I__12/O                    InMux                        259              3590  38597  RISE       1
+r_LED_1_LC_9_6_0/in3       LogicCell40_SEQ_MODE_1000      0              3590  38597  RISE       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : i_Switch_1
+Path End         : r_LED_1_LC_9_6_0/in0
+Capture Clock    : r_LED_1_LC_9_6_0/clk
+Setup Constraint : +INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (i_Clk:R#1)    +INF
++ Capture Clock Source Latency               0
++ Capture Clock Path Delay                2461
+- Setup Time                              -400
+--------------------------------------   ----- 
+End-of-path required time (ps)            +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2322
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2322
+ 
+Data path
+pin name                             model name                 delay  cumulative delay  slack  edge  Fanout
+-----------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+i_Switch_1                           Led_Project                    0                 0   +INF  RISE       1
+i_Switch_1_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  RISE       1
+i_Switch_1_ibuf_iopad/DOUT           IO_PAD                       590               590   +INF  RISE       1
+i_Switch_1_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               590   +INF  RISE       1
+i_Switch_1_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463              1053   +INF  FALL       1
+I__13/I                              Odrv4                          0              1053   +INF  FALL       1
+I__13/O                              Odrv4                        372              1425   +INF  FALL       1
+I__14/I                              Span4Mux_v                     0              1425   +INF  FALL       1
+I__14/O                              Span4Mux_v                   372              1796   +INF  FALL       1
+I__15/I                              LocalMux                       0              1796   +INF  FALL       1
+I__15/O                              LocalMux                     309              2105   +INF  FALL       1
+I__16/I                              InMux                          0              2105   +INF  FALL       1
+I__16/O                              InMux                        217              2322   +INF  FALL       1
+r_LED_1_LC_9_6_0/in0                 LogicCell40_SEQ_MODE_1000      0              2322   +INF  FALL       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : i_Switch_1
+Path End         : r_Switch_1_LC_9_6_1/in3
+Capture Clock    : r_Switch_1_LC_9_6_1/clk
+Setup Constraint : +INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (i_Clk:R#1)    +INF
++ Capture Clock Source Latency               0
++ Capture Clock Path Delay                2461
+- Setup Time                              -217
+--------------------------------------   ----- 
+End-of-path required time (ps)            +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2272
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2272
+ 
+Data path
+pin name                             model name                 delay  cumulative delay  slack  edge  Fanout
+-----------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+i_Switch_1                           Led_Project                    0                 0   +INF  FALL       1
+i_Switch_1_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  FALL       1
+i_Switch_1_ibuf_iopad/DOUT           IO_PAD                       540               540   +INF  FALL       1
+i_Switch_1_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               540   +INF  FALL       1
+i_Switch_1_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463              1003   +INF  FALL       1
+I__13/I                              Odrv4                          0              1003   +INF  FALL       1
+I__13/O                              Odrv4                        372              1375   +INF  FALL       1
+I__14/I                              Span4Mux_v                     0              1375   +INF  FALL       1
+I__14/O                              Span4Mux_v                   372              1746   +INF  FALL       1
+I__15/I                              LocalMux                       0              1746   +INF  FALL       1
+I__15/O                              LocalMux                     309              2055   +INF  FALL       1
+I__17/I                              InMux                          0              2055   +INF  FALL       1
+I__17/O                              InMux                        217              2272   +INF  FALL       1
+r_Switch_1_LC_9_6_1/in3              LogicCell40_SEQ_MODE_1000      0              2272   +INF  FALL       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_Switch_1_LC_9_6_1/clk                             LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : r_LED_1_LC_9_6_0/lcout
+Path End         : o_LED_1
+Setup Constraint : +INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (i_Clk:R#1)      0
++ Launch Clock Source Latency              0
++ Launch Clock Path Delay               2461
++ Clock To Q                             540
++ Data Path Delay                       5531
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           8532
+ 
+Launch Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+Data path
+pin name                           model name                 delay  cumulative delay  slack  edge  Fanout
+---------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+r_LED_1_LC_9_6_0/lcout             LogicCell40_SEQ_MODE_1000    540              3001   +INF  RISE       2
+I__19/I                            Odrv4                          0              3001   +INF  RISE       1
+I__19/O                            Odrv4                        351              3352   +INF  RISE       1
+I__21/I                            LocalMux                       0              3352   +INF  RISE       1
+I__21/O                            LocalMux                     330              3682   +INF  RISE       1
+I__22/I                            IoInMux                        0              3682   +INF  RISE       1
+I__22/O                            IoInMux                      259              3941   +INF  RISE       1
+o_LED_1_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3941   +INF  RISE       1
+o_LED_1_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              6178   +INF  FALL       1
+o_LED_1_obuf_iopad/DIN             IO_PAD                         0              6178   +INF  FALL       1
+o_LED_1_obuf_iopad/PACKAGEPIN:out  IO_PAD                      2353              8532   +INF  FALL       1
+o_LED_1                            Led_Project                    0              8532   +INF  FALL       1
+
+===================================================================== 
+                    End of Detailed Setup Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    Detailed Hold Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : r_Switch_1_LC_9_6_1/lcout
+Path End         : r_LED_1_LC_9_6_0/in3
+Capture Clock    : r_LED_1_LC_9_6_0/clk
+Hold Constraint  : 0p
+Path slack       : 1066p
+
+Capture Clock Arrival Time (i_Clk:R#1)      0
++ Capture Clock Source Latency              0
++ Capture Clock Path Delay               2461
+- Setup Time                                0
+--------------------------------------   ---- 
+End-of-path required time (ps)           2461
+
+Launch Clock Arrival Time (i_Clk:R#1)      0
++ Launch Clock Source Latency              0
++ Launch Clock Path Delay               2461
++ Clock To Q                             540
++ Data Path Delay                        526
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3527
+ 
+Launch Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_Switch_1_LC_9_6_1/clk                             LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+Data path
+pin name                   model name                 delay  cumulative delay  slack  edge  Fanout
+-------------------------  -------------------------  -----  ----------------  -----  ----  ------
+r_Switch_1_LC_9_6_1/lcout  LogicCell40_SEQ_MODE_1000    540              3001   1066  FALL       1
+I__11/I                    LocalMux                       0              3001   1066  FALL       1
+I__11/O                    LocalMux                     309              3310   1066  FALL       1
+I__12/I                    InMux                          0              3310   1066  FALL       1
+I__12/O                    InMux                        217              3527   1066  FALL       1
+r_LED_1_LC_9_6_0/in3       LogicCell40_SEQ_MODE_1000      0              3527   1066  FALL       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : r_LED_1_LC_9_6_0/lcout
+Path End         : r_LED_1_LC_9_6_0/in1
+Capture Clock    : r_LED_1_LC_9_6_0/clk
+Hold Constraint  : 0p
+Path slack       : 1066p
+
+Capture Clock Arrival Time (i_Clk:R#1)      0
++ Capture Clock Source Latency              0
++ Capture Clock Path Delay               2461
+- Setup Time                                0
+--------------------------------------   ---- 
+End-of-path required time (ps)           2461
+
+Launch Clock Arrival Time (i_Clk:R#1)      0
++ Launch Clock Source Latency              0
++ Launch Clock Path Delay               2461
++ Clock To Q                             540
++ Data Path Delay                        526
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3527
+ 
+Launch Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+Data path
+pin name                model name                 delay  cumulative delay  slack  edge  Fanout
+----------------------  -------------------------  -----  ----------------  -----  ----  ------
+r_LED_1_LC_9_6_0/lcout  LogicCell40_SEQ_MODE_1000    540              3001   1066  FALL       2
+I__18/I                 LocalMux                       0              3001   1066  FALL       1
+I__18/O                 LocalMux                     309              3310   1066  FALL       1
+I__20/I                 InMux                          0              3310   1066  FALL       1
+I__20/O                 InMux                        217              3527   1066  FALL       1
+r_LED_1_LC_9_6_0/in1    LogicCell40_SEQ_MODE_1000      0              3527   1066  FALL       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : i_Switch_1
+Path End         : r_LED_1_LC_9_6_0/in0
+Capture Clock    : r_LED_1_LC_9_6_0/clk
+Hold Constraint  : -INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (i_Clk:R#1)    -INF
++ Capture Clock Source Latency               0
++ Capture Clock Path Delay                2461
+- Setup Time                                 0
+--------------------------------------   ----- 
+End-of-path required time (ps)            -INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2322
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2322
+ 
+Data path
+pin name                             model name                 delay  cumulative delay  slack  edge  Fanout
+-----------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+i_Switch_1                           Led_Project                    0                 0   +INF  RISE       1
+i_Switch_1_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  RISE       1
+i_Switch_1_ibuf_iopad/DOUT           IO_PAD                       590               590   +INF  RISE       1
+i_Switch_1_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               590   +INF  RISE       1
+i_Switch_1_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463              1053   +INF  FALL       1
+I__13/I                              Odrv4                          0              1053   +INF  FALL       1
+I__13/O                              Odrv4                        372              1425   +INF  FALL       1
+I__14/I                              Span4Mux_v                     0              1425   +INF  FALL       1
+I__14/O                              Span4Mux_v                   372              1796   +INF  FALL       1
+I__15/I                              LocalMux                       0              1796   +INF  FALL       1
+I__15/O                              LocalMux                     309              2105   +INF  FALL       1
+I__16/I                              InMux                          0              2105   +INF  FALL       1
+I__16/O                              InMux                        217              2322   +INF  FALL       1
+r_LED_1_LC_9_6_0/in0                 LogicCell40_SEQ_MODE_1000      0              2322   +INF  FALL       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : i_Switch_1
+Path End         : r_Switch_1_LC_9_6_1/in3
+Capture Clock    : r_Switch_1_LC_9_6_1/clk
+Hold Constraint  : -INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (i_Clk:R#1)    -INF
++ Capture Clock Source Latency               0
++ Capture Clock Path Delay                2461
+- Setup Time                                 0
+--------------------------------------   ----- 
+End-of-path required time (ps)            -INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2272
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2272
+ 
+Data path
+pin name                             model name                 delay  cumulative delay  slack  edge  Fanout
+-----------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+i_Switch_1                           Led_Project                    0                 0   +INF  FALL       1
+i_Switch_1_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  FALL       1
+i_Switch_1_ibuf_iopad/DOUT           IO_PAD                       540               540   +INF  FALL       1
+i_Switch_1_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               540   +INF  FALL       1
+i_Switch_1_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463              1003   +INF  FALL       1
+I__13/I                              Odrv4                          0              1003   +INF  FALL       1
+I__13/O                              Odrv4                        372              1375   +INF  FALL       1
+I__14/I                              Span4Mux_v                     0              1375   +INF  FALL       1
+I__14/O                              Span4Mux_v                   372              1746   +INF  FALL       1
+I__15/I                              LocalMux                       0              1746   +INF  FALL       1
+I__15/O                              LocalMux                     309              2055   +INF  FALL       1
+I__17/I                              InMux                          0              2055   +INF  FALL       1
+I__17/O                              InMux                        217              2272   +INF  FALL       1
+r_Switch_1_LC_9_6_1/in3              LogicCell40_SEQ_MODE_1000      0              2272   +INF  FALL       1
+
+Capture Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_Switch_1_LC_9_6_1/clk                             LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : r_LED_1_LC_9_6_0/lcout
+Path End         : o_LED_1
+Hold Constraint  : -INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (i_Clk:R#1)      0
++ Launch Clock Source Latency              0
++ Launch Clock Path Delay               2461
++ Clock To Q                             540
++ Data Path Delay                       5531
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           8532
+ 
+Launch Clock Path
+pin name                                            model name                 delay  cumulative delay  edge  Fanout
+--------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+i_Clk                                               Led_Project                    0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+i_Clk_ibuf_gb_io_iopad/DOUT                         IO_PAD                       590               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               590  RISE       1
+i_Clk_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1998  RISE       1
+I__8/I                                              gio2CtrlBuf                    0              1998  RISE       1
+I__8/O                                              gio2CtrlBuf                    0              1998  RISE       1
+I__9/I                                              GlobalMux                      0              1998  RISE       1
+I__9/O                                              GlobalMux                    154              2153  RISE       1
+I__10/I                                             ClkMux                         0              2153  RISE       1
+I__10/O                                             ClkMux                       309              2461  RISE       1
+r_LED_1_LC_9_6_0/clk                                LogicCell40_SEQ_MODE_1000      0              2461  RISE       1
+
+Data path
+pin name                           model name                 delay  cumulative delay  slack  edge  Fanout
+---------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+r_LED_1_LC_9_6_0/lcout             LogicCell40_SEQ_MODE_1000    540              3001   +INF  RISE       2
+I__19/I                            Odrv4                          0              3001   +INF  RISE       1
+I__19/O                            Odrv4                        351              3352   +INF  RISE       1
+I__21/I                            LocalMux                       0              3352   +INF  RISE       1
+I__21/O                            LocalMux                     330              3682   +INF  RISE       1
+I__22/I                            IoInMux                        0              3682   +INF  RISE       1
+I__22/O                            IoInMux                      259              3941   +INF  RISE       1
+o_LED_1_obuf_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3941   +INF  RISE       1
+o_LED_1_obuf_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              6178   +INF  FALL       1
+o_LED_1_obuf_iopad/DIN             IO_PAD                         0              6178   +INF  FALL       1
+o_LED_1_obuf_iopad/PACKAGEPIN:out  IO_PAD                      2353              8532   +INF  FALL       1
+o_LED_1                            Led_Project                    0              8532   +INF  FALL       1
+
+===================================================================== 
+                    End of Detailed Hold Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    End of Timing Report 
+##################################################################### 
+

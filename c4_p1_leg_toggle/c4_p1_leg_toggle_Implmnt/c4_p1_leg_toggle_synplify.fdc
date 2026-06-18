@@ -1,0 +1,5 @@
+
+#1001 : create_clock -period 40.00 -name i_Clk [get_ports i_Clk]
+# line 1 in z:/documents/programming/fpga/gsfpga/c4_p1_led_toggle.sdc
+
+create_clock -period {40.000} -name {i_Clk} [get_ports {i_Clk}]

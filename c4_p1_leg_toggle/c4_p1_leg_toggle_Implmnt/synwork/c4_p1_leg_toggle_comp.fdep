@@ -1,0 +1,15 @@
+#OPTIONS:"|-layerid|0|-orig_srs|C:\\lscc\\iCEcube2.2020.12\\sbt_backend\\Projects\\c4_p1_leg_toggle\\c4_p1_leg_toggle_Implmnt\\synwork\\c4_p1_leg_toggle_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-I|C:\\lscc\\iCEcube2.2020.12\\sbt_backend\\Projects\\c4_p1_leg_toggle\\|-I|C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib|-v2001|-devicelib|C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\generic\\sb_ice40.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work"
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\bin64\\c_ver.exe":1778515612
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\generic\\sb_ice40.v":1778515613
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\hypermods.v":1778515614
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\umr_capim.v":1778515614
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\scemi_objects.v":1778515614
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vlog\\scemi_pipes.svh":1778515614
+#CUR:"Z:\\Documents\\Programming\\FPGA\\GSFPGA\\c4_p1_led_toggle.v":1781798172
+0			"Z:\Documents\Programming\FPGA\GSFPGA\c4_p1_led_toggle.v" verilog
+#Dependency Lists(Uses List)
+0 -1
+#Dependency Lists(Users Of)
+0 -1
+#Design Unit to File Association
+module work Led_Project 0
