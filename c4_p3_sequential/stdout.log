@@ -1,0 +1,78 @@
+Running in Lattice mode
+
+
+Starting:    C:\lscc\iCEcube2.2020.12\synpbase\bin64\mbin\synbatch.exe
+Install:     C:\lscc\iCEcube2.2020.12\synpbase
+Hostname:    CARLINHODF91
+Date:        Thu Jun 18 14:23:33 2026
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch c4_p3_sequential_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+log file: "C:\lscc\iCEcube2.2020.12\sbt_backend\Projects\c4_p3_sequential\c4_p3_sequential_Implmnt\c4_p3_sequential.srr"
+Running: c4_p3_sequential_Implmnt in foreground
+
+Running c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+
+Running: compile (Compile) on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+# Thu Jun 18 14:23:33 2026
+
+Running: compile_flow (Compile Process) on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+# Thu Jun 18 14:23:33 2026
+
+Running: compiler (Compile Input) on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+# Thu Jun 18 14:23:33 2026
+Copied C:\lscc\iCEcube2.2020.12\sbt_backend\Projects\c4_p3_sequential\c4_p3_sequential_Implmnt\synwork\c4_p3_sequential_comp.srs to C:\lscc\iCEcube2.2020.12\sbt_backend\Projects\c4_p3_sequential\c4_p3_sequential_Implmnt\c4_p3_sequential.srs
+
+compiler completed
+# Thu Jun 18 14:23:34 2026
+
+Return Code: 0
+Run Time:00h:00m:01s
+
+Running: multi_srs_gen (Multi-srs Generator) on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+# Thu Jun 18 14:23:34 2026
+
+multi_srs_gen completed
+# Thu Jun 18 14:23:35 2026
+
+Return Code: 0
+Run Time:00h:00m:01s
+Copied C:\lscc\iCEcube2.2020.12\sbt_backend\Projects\c4_p3_sequential\c4_p3_sequential_Implmnt\synwork\c4_p3_sequential_mult.srs to C:\lscc\iCEcube2.2020.12\sbt_backend\Projects\c4_p3_sequential\c4_p3_sequential_Implmnt\c4_p3_sequential.srs
+Complete: Compile Process on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+
+Running: premap (Pre-mapping) on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+# Thu Jun 18 14:23:35 2026
+
+premap completed
+# Thu Jun 18 14:23:35 2026
+
+Return Code: 0
+Run Time:00h:00m:00s
+Complete: Compile on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+
+Running: map (Map) on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+# Thu Jun 18 14:23:35 2026
+License granted for 4 parallel jobs
+
+Running: fpga_mapper (Map & Optimize) on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+# Thu Jun 18 14:23:35 2026
+Copied C:\lscc\iCEcube2.2020.12\sbt_backend\Projects\c4_p3_sequential\c4_p3_sequential_Implmnt\synwork\c4_p3_sequential_m.srm to C:\lscc\iCEcube2.2020.12\sbt_backend\Projects\c4_p3_sequential\c4_p3_sequential_Implmnt\c4_p3_sequential.srm
+
+fpga_mapper completed with warnings
+# Thu Jun 18 14:23:36 2026
+
+Return Code: 1
+Run Time:00h:00m:01s
+Complete: Map on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+Complete: Logic Synthesis on c4_p3_sequential_syn|c4_p3_sequential_Implmnt
+
+exit status=0
+
+exit status=0
+

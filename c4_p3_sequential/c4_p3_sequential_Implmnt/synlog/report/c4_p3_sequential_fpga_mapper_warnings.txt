@@ -1,0 +1,1 @@
+@W: FX1039 :"z:\documents\programming\fpga\gsfpga\c4_p3_sequential.v":9:4:9:9|User-specified initial value defined for instance r_AND_1 is being ignored. 

@@ -1,0 +1,2 @@
+@E: CG243 :"Z:\Documents\Programming\FPGA\GSFPGA\c4_p3_sequential.v":5:4:5:9|Expecting ) or comma delimiter
+

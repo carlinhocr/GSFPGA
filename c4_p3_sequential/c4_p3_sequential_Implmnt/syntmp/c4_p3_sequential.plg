@@ -1,0 +1,12 @@
+@P:  Worst Slack : NA
+@P:  i_Clk - Estimated Frequency : NA
+@P:  i_Clk - Requested Frequency : 25.0 MHz
+@P:  i_Clk - Estimated Period : NA
+@P:  i_Clk - Requested Period : 40.000
+@P:  i_Clk - Slack : NA
+@P: Led_Project Part : ice40hx1kvq100
+@P: Led_Project I/O primitives : 4
+@P: Led_Project I/O Register bits : 0
+@P: Led_Project Register bits (Non I/O) : 1 (0%)
+@P: Led_Project Total Luts : 1 (0%)
+@P:  CPU Time : 0h:00m:00s
