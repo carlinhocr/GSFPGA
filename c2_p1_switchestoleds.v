@@ -18,7 +18,7 @@ endmodule
 command to compile and run:
 
 yosys -p "synth_ice40 -top Switches_to_Leds -json c2_p1_switchestoleds.json" c2_p1_switchestoleds.v
-nextpnr-ice40 --hx1k --package vq100 --pcf c2_p1_switchestoleds.pcf --json c2_p1_switchestoleds.json --asc c0_top.asc
+nextpnr-ice40 --hx1k --package vq100 --pcf c2_p1_switchestoleds.pcf --json c2_p1_switchestoleds.json --asc c2_p1_switchestoleds.asc
 icepack c2_p1_switchestoleds.asc c2_p1_switchestoleds.bin
 iceprog c2_p1_switchestoleds.bin
 
