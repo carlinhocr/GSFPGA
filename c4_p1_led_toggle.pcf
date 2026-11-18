@@ -12,3 +12,4 @@ set_io i_Switch_4 52 #IOR_53 PIO
 
 #Clock
 set_io i_Clk 15
+set_frequency i_Clk 25 #25 Mhz de frequencia
